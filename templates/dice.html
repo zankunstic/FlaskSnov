@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Dice Casino</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=DM+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e9dfc9;
+            font-family: 'DM Sans', sans-serif;
+            color: #29251e;
+            background-image: radial-gradient(#c8b99c 1px, transparent 1px);
+            background-size: 18px 18px;
+        }
+
+        .game-container {
+            width: 90%;
+            max-width: 480px;
+            background: #f8f1df;
+            padding: 55px 35px;
+            text-align: center;
+            border: 2px solid #29251e;
+            outline: 7px solid #a33d2d;
+            box-shadow: 12px 12px 0 #29251e;
+        }
+
+        h1 {
+            font-family: 'Rye', serif;
+            font-size: 38px;
+            color: #a33d2d;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            letter-spacing: 5px;
+            font-weight: 900;
+            color: #8c795b;
+            margin-bottom: 45px;
+        }
+
+        .dice {
+            width: 165px;
+            height: 165px;
+            margin: 0 auto 35px;
+            background: #fffdf5;
+            border: 3px solid #29251e;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Rye', serif;
+            font-size: 85px;
+            color: #a33d2d;
+            box-shadow: 8px 8px 0 #c4a66c;
+            animation: rollIn 0.7s ease;
+            transition: 0.3s;
+        }
+
+        .dice:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .result {
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #8c795b;
+            margin-bottom: 35px;
+        }
+
+        .roll-button {
+            display: inline-block;
+            background: #a33d2d;
+            color: #fff5df;
+            padding: 18px 35px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 13px;
+            letter-spacing: 2px;
+            border: 2px solid #29251e;
+            box-shadow: 5px 5px 0 #29251e;
+            transition: 0.2s;
+        }
+
+        .roll-button:hover {
+            background: #29251e;
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0 #a33d2d;
+        }
+
+        .footer {
+            margin-top: 45px;
+            font-family: 'Rye', serif;
+            font-size: 10px;
+            color: #a18d6c;
+            letter-spacing: 2px;
+        }
+
+        @keyframes rollIn {
+            0% {
+                transform: rotate(180deg) scale(0.3);
+                opacity: 0;
+            }
+            100% {
+                transform: rotate(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .game-container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .dice {
+                width: 140px;
+                height: 140px;
+                font-size: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>RETRO DICE</h1>
+
+        <p class="subtitle">THE CLASSIC CASINO GAME</p>
+
+        <div class="dice">
+            {{ kocka }}
+        </div>
+
+        <p class="result">
+            YOUR NUMBER: {{ kocka }}
+        </p>
+
+        <a href="/kocka" class="roll-button">
+            🎲 ROLL AGAIN
+        </a>
+
+        <p class="footer">
+            ★ INSERT COIN TO PLAY ★
+            <br><br>
+            EST. 1985
+        </p>
+
+    </div>
+
+</body>
+</html>
