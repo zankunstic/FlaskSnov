@@ -40,3 +40,4 @@ def future():
         procent=procent)
 
 app.run(debug=True)
+
